@@ -3,18 +3,18 @@ const axios = require('axios');
 const fonts = {
 
     mathsans: {
-        a: "𝖺", b: "𝖻", c: "𝖼", d: "𝖽", e: "𝖾", f: "𝖿", g: "𝗀", h: "𝗁", i: "𝗂",
-    j: "𝗃", k: "𝗄", l: "𝗅", m: "𝗆", n: "𝗇", o: "𝗈", p: "𝗉", q: "𝗊", r: "𝗋",
-    s: "𝗌", t: "𝗍", u: "𝗎", v: "𝗏", w: "𝗐", x: "𝗑", y: "𝗒", z: "𝗓",
-    A: "𝐀", B: "𝐁", C: "𝐂", D: "𝐃", E: "𝐄", F: "𝐅", G: "𝐆", H: "𝐇", I: "𝐈",
-    J: "𝐉", K: "𝐊", L: "𝐋", M: "𝗠", N: "𝐍", O: "𝐎", P: "𝐏", Q: "𝐐", R: "𝐑",
-    S: "𝐒", T: "𝐓", U: "𝐔", V: "𝐕", W: "𝐖", X: "𝐗", Y: "𝐘", Z: "𝐙",1: "𝟭", 2: "𝟮", 3: "𝟯", 4: "𝟰", 5: "𝟱", 6: "𝟲", 7: "𝟳", 8: "𝟴", 9: "𝟵", 0: "𝟬"
+        a: "a", b: "b", c: "c", d: "d", e: "e", f: "f", g: "g", h: "h", i: "i",
+    j: "j", k: "k", l: "l", m: "m", n: "n", o: "o", p: "p", q: "q", r: "r",
+    s: "s", t: "t", u: "u", v: "v", w: "w", x: "x", y: "y", z: "z",
+    A: "A", B: "B", C: "C", D: "D", E: "E", F: "F", G: "G", H: "H", I: "I",
+    J: "J", K: "K", L: "L", M: "M", N: "N", O: "O", P: "P", Q: "Q", R: "R",
+    S: "S", T: "T", U: "U", V: "V", W: "W", X: "X", Y: "Y", Z: "Z",1: "𝟭", 2: "𝟮", 3: "𝟯", 4: "𝟰", 5: "𝟱", 6: "𝟲", 7: "𝟳", 8: "𝟴", 9: "𝟵", 0: "𝟬"
     }
 };
 const rolePlay = "quand tu répond à cette question ajoutes des emojis convenable :\n\n";
 
 const Prefixes = [
-  'Dee',
+  'dee',
   'ai',
   'detective',
 ];
@@ -52,7 +52,7 @@ api.setMessageReaction("📚", event.messageID, () => {}, true);
       const senderInfo = await api.getUserInfo([senderID]);
       const senderName = senderInfo[senderID].name;
       const response = await axios.get(`https://sandipbaruwal.onrender.com/gemini?prompt=${encodeURIComponent(rolePlay + prompt)}`);
-      const answer = `[📕] 𝗗𝗘𝗧𝗘𝗖𝗧𝗜𝗩𝗘 𝗗𝗘𝗘\n\n${response.data.answer} \n[📚]········································⬚`;
+      const answer = `[📕] 𝗢𝗣𝗧𝗜𝗠𝗨𝗦 𝗣𝗥𝗜𝗠𝗘\n\n${response.data.answer} \n[📚]········································⬚`;
 api.setMessageReaction("📕", event.messageID, () => {}, true);
 
       //apply const font to each letter in the answer
