@@ -3,20 +3,20 @@ const axios = require('axios');
 const fonts = {
 
     mathsans: {
-        a: "a", b: "b", c: "c", d: "d", e: "e", f: "f", g: "g", h: "h", i: "i",
-    j: "j", k: "k", l: "l", m: "m", n: "n", o: "o", p: "p", q: "q", r: "r",
-    s: "s", t: "t", u: "u", v: "v", w: "w", x: "x", y: "y", z: "z",
-    A: "A", B: "B", C: "C", D: "D", E: "E", F: "F", G: "G", H: "H", I: "I",
-    J: "J", K: "K", L: "L", M: "M", N: "N", O: "O", P: "P", Q: "Q", R: "R",
-    S: "S", T: "T", U: "U", V: "V", W: "W", X: "X", Y: "Y", Z: "Z",1: "𝟭", 2: "𝟮", 3: "𝟯", 4: "𝟰", 5: "𝟱", 6: "𝟲", 7: "𝟳", 8: "𝟴", 9: "𝟵", 0: "𝟬"
+        a: "𝖺", b: "𝖻", c: "𝖼", d: "𝖽", e: "𝖾", f: "𝖿", g: "𝗀", h: "𝗁", i: "𝗂",
+    j: "𝗃", k: "𝗄", l: "𝗅", m: "𝗆", n: "𝗇", o: "𝗈", p: "𝗉", q: "𝗊", r: "𝗋",
+    s: "𝗌", t: "𝗍", u: "𝗎", v: "𝗏", w: "𝗐", x: "𝗑", y: "𝗒", z: "𝗓",
+    A: "𝗔", B: "𝗕", C: "𝗖", D: "𝗗", E: "𝗘", F: "𝗙", G: "𝗚", H: "𝗛", I: "𝗜",
+    J: "𝗝", K: "𝗞", L: "𝗟", M: "𝗠", N: "𝗡", O: "𝗢", P: "𝗣", Q: "𝗤", R: "𝗥",
+    S: "𝗦", T: "𝗧", U: "𝗨", V: "𝗩", W: "𝗪", X: "𝗫", Y: "𝗬", Z: "𝗭"
     }
 };
 const rolePlay = "quand tu répond à cette question ajoutes des emojis convenable :\n\n";
 
 const Prefixes = [
-  'dee',
+  'jay',
   'ai',
-  'detective',
+  'walker',
 ];
 
 module.exports = {
@@ -43,7 +43,7 @@ module.exports = {
       const prompt = event.body.substring(prefix.length).trim();
 api.setMessageReaction("📚", event.messageID, () => {}, true);
       if (!prompt) {
-        await message.reply("📚");
+        await message.reply(" 𝗵ello 💬");
         return;
       }
         return;
@@ -52,7 +52,7 @@ api.setMessageReaction("📚", event.messageID, () => {}, true);
       const senderInfo = await api.getUserInfo([senderID]);
       const senderName = senderInfo[senderID].name;
       const response = await axios.get(`https://sandipbaruwal.onrender.com/gemini?prompt=${encodeURIComponent(rolePlay + prompt)}`);
-      const answer = `[📕] 𝗢𝗣𝗧𝗜𝗠𝗨𝗦 𝗣𝗥𝗜𝗠𝗘\n\n${response.data.answer} \n[📚]········································⬚`;
+      const answer = `[📕] 𝗝𝗔𝗬 𝗪𝗔𝗟𝗞𝗘𝗥\n\n${response.data.answer} \n[📚]········································⬚`;
 api.setMessageReaction("📕", event.messageID, () => {}, true);
 
       //apply const font to each letter in the answer
